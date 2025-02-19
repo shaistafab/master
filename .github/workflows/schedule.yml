@@ -1,8 +1,9 @@
+name: sheduled_event
 on:
     schedule:
         - cron: '*/1 * * * *'
 jobs:
-    hello_world:
+    event_trigger:
         runs-on: ubuntu-latest
         steps:
             - name: Echo current time
