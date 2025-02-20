@@ -13,6 +13,6 @@ jobs:
             - name: "Echo basic information"
               run: |
                 echo "REF: $GITHUB_REF"
-                echo "JobID: $GITHUB_JOB"
+                echo "Job ID: $GITHUB_JOB"
                 echo "Action: $GITHUB_ACTION"
                 echo "Actor: $GITHUB_ACTOR"
