@@ -1,0 +1,32 @@
+name: Manual event trigger CLI
+
+on:
+    workflow_dispatch:
+        inputs:
+            name:
+                description: 'Name of the person'
+                required: true
+                type: string
+            event_type:
+                description: 'Type of event'
+                required: true
+                type: string
+            data:
+                description: 'Base64 encoded content of a file'
+                required: false
+                type: string
+
+jobs:
+    manual_event_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Decode file constant
+              run: |
+                echo "${{inputs.data}}" | base64 --decode > ./decoded_file.txt
+            - name: Display event
+              run: |
+                echo "${{inputs.event_type}}, ${{inputs.name}}!"
+            - name: Display file content
+              run: |
+                echo "Contents of the file:"
+                cat ./decoded_file.txt
