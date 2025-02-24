@@ -9,7 +9,7 @@ jobs:
     respond_to_dispatch:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout Repo
-              uses: workflows/multi_events@main
+            #- name: Checkout Repo
+            #  uses: workflows/multi_events@main
             - name: Run a script
               run:  echo "Event of type:$GITHUB_EVENT_NAME"
