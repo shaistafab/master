@@ -1,0 +1,15 @@
+name: conditional method
+
+on: [push]
+jobs:
+    repo_condition:
+        if: github.repository == 'octo-org/octo-repo-prod'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "select repo"
+              run:  echo "Hello world!"
+    another_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "steps another job"
+              run: echo "Another steps"
