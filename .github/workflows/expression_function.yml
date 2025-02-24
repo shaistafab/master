@@ -1,0 +1,38 @@
+name: Expressions
+
+on:
+    push:
+        branches:
+            - main
+    issues:
+        types: [opened, labeled]
+
+jobs:
+    expression-functions:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check if string contains substring
+              if: contains('Hello world', 'llo')
+              run: echo "The string contains the substring"
+
+            - name: Check if string starts with
+              if: startswith('Hello world', 'He')
+              run: echo "The string starts with He"
+
+            - name: Check if string ends with
+              if: contains('Hello world', 'ld')
+              run: echo "The string ends with ld"
+
+            - name: Format and echo string
+              run: echo ${{format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat')}}
+
+            - name: join issue labels
+              if: github.event_name == 'issues'
+              run: echo "Issue labels:" ${{join(github.event.issue.labels.*.name, ', ') }}
+
+            - name: convert job context to JSON
+              run: echo "job context in JSON:" ${{toJson(github.job)}}
+
+            - name: Parse json string
+              run: echo "Parsed JSON:" ${{fromJson('{"hello":"world"}').hello}}
+
