@@ -16,7 +16,11 @@ jobs:
               run: |
                 echo 'print("Hello from swift on macos")' > hello.swift
 
-            - name: Install dependencies
+            - name: Install dependecies
+              run: |
+                brew install swiftlint
+
+            - name: Run swiftlint
               run: swiftlint
 
             - name: Compile and run swift program
