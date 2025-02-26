@@ -1,0 +1,13 @@
+name: Workflow context workflows
+
+on: ['push']
+
+jobs:
+  workflow-context:
+    runs-on: ubuntu-latest
+    steps:
+        MY_ACTION: ${{ github.action }}
+        - name: "My Step"
+          run: echo "Hello! $MY_ACTION"
+          env:
+            MY_ACTION: ${{ github.action }}
