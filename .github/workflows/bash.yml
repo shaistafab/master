@@ -1,0 +1,8 @@
+name: Bash script workflow
+on: ['push']
+jobs:
+    bash-script-workflow:
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Run a script
+              run: ./bash_script_dir/script.sh
