@@ -10,4 +10,4 @@ jobs:
               #your workflow wouldn't find bash_script_dit or any other files in your repo.
 
             - name: Run a script
-              run: ./bash_script_dir/script.sh
+              run: bash bash_script_dir/script.sh
