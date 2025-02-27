@@ -9,8 +9,8 @@ jobs:
               #contents so that it can run scripts, aceess files or execute commands without actions/checkout@v3
               #your workflow wouldn't find bash_script_dit or any other files in your repo.
             - name: Grant execute permission to script
-              run: chmod +x ./bash_script_dir/script.sh
-              
+              run: chmod +x ./bash_script_dir/script.sh #./bash_script_dir/script.sh: Permission denied
+
             - name: Run a script
               run: ./bash_script_dir/script.sh
               #run: bash bash_script_dir/script.sh #to run this line remove grant steps
