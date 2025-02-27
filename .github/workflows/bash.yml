@@ -3,6 +3,8 @@ on: ['push']
 jobs:
     bash-script-workflow:
         runs-on: ubuntu-latest
-        steps: 
+        steps:
+            - name: Checkout the repository
+              uses: shaistafab/master
             - name: Run a script
               run: ./bash_script_dir/script.sh
